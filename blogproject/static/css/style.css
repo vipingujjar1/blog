@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap');
+
+body{
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Montserrat;
+}
+
+.jumbotron.blog-jumbo {
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(252,150,120,1) 0%, rgba(247,108,127,1) 100.4% );
+  cursor: pointer;
+}
+
+.jumbotron.blog-jumbo h1 {
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+#blog-title {
+  /* font-weight: 900;
+  font-size: 25px; */
+  text-transform: capitalize;
+}

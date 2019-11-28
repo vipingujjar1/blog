@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'blogapp/base.html' %}
+{% block body_block %}ABC BLOG HOME{% endblock %}
+{% block content %}
+
+
+    <div class="jumbotron blog-jumbo">
+      <h1 class="text-center">Blogs</h1>
+    </div>
+
+    {% for post in post_list %}
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title" id="blog-title">{{post.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{post.publish}}</h6>
+        <p class="card-text">{{post.body | truncatewords:30 | linebreaks}}</p>
+        <a href="/detail/{{post.id}}" class="card-link">Read more</a>
+      </div>
+    </div>
+    {% endfor %}
+
+    {% include 'blogapp/pagination.html' with page=post_list %}
+
+{% endblock %}

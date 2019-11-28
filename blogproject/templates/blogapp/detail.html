@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'blogapp/base.html'%}
+{% block content %}
+
+<div class="card mb-4 py-5 px-2">
+    <div class="card-body">
+        <h5 class="card-title" id="blog-title">{{post.title}}</h5>
+        <h6 class="card-subtitle mb-5 text-muted">{{post.publish}}</h6>
+        <p class="card-text text-justify">{{post.body}}</p>
+    </div>
+</div>
+
+
+<h3>Comments</h3>
+
+{% for c in comments %}
+    <div class="comment">
+        <a>name: {{ c.name}}<a><br>
+        <!--<a>e-mail:{{ c.email }}</a><br>-->
+        <p>comment :{{ c.body| linebreaks }}</p><br><br>
+    </div>
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}
+
+<h3>please add comment</h3>
+{% if comment %}
+<h2>our comment is added successfully</h2>
+{% else %}
+<form  method="post">
+  {{form.as_p}}
+  {% csrf_token %}
+  <input type="submit" class="btn btn-primary" value="submit comments">
+  </form>
+</div>
+{% endif %}
+{% endblock %}

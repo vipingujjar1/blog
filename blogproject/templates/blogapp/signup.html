@@ -1,0 +1,15 @@
+{% extends 'blogapp/base.html' %}
+{% block content %}
+<h1>welcome  to signup page</h1>
+<div class="container" >
+<form method="POST" align='left'>
+  <table>
+    {{form.as_p}}
+    {% csrf_token %}
+  </table>
+  <br><br>
+  <input type="submit" name="btn btn-primary" value="Signup">
+</form>
+</div>
+
+{% endblock %}
